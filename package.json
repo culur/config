@@ -15,10 +15,18 @@
   "keywords": [
     "config"
   ],
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/config/*"
+    ]
+  },
   "scripts": {},
   "engines": {
     "node": ">=12"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
