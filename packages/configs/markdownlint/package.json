@@ -1,0 +1,37 @@
+{
+  "name": "@culur/markdownlint-config",
+  "version": "0.0.0",
+  "description": "Sharing markdownlint configurations",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "Phạm Hồng Phúc <phamhongphuc.info@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "config",
+    "markdownlint"
+  ],
+  "main": ".markdownlint.json",
+  "files": [
+    ".markdownlint.json",
+    ".markdownlintignore",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "fix": "run-s fix:*",
+    "test": "run-s test:*"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "dependencies": {
+    "markdownlint-cli": "^0.26.0"
+  }
+}
