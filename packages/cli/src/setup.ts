@@ -13,11 +13,3 @@ setup.action(async () => {
 
     console.log(response);
 });
-
-setup.command('jug').action(() => {
-    console.log('heat jug');
-});
-
-setup.command('pot').action(() => {
-    console.log('heat pot');
-});

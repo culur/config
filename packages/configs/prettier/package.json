@@ -16,10 +16,10 @@
     "config",
     "prettier"
   ],
-  "main": "build/index.js",
-  "typings": "build/index.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "files": [
-    "build",
+    "lib",
     ".prettierignore",
     ".prettierrc.js",
     "!**/*.test.*",
