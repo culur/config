@@ -1,23 +1,41 @@
+import { green } from 'chalk';
 import { Command } from 'commander';
 import prompts from 'prompts';
-import fse from 'fs-extra';
-import lodash from 'lodash';
 
 export const setup = new Command('setup');
 
 setup.action(async () => {
-    const response = await prompts([
+    console.log(
+        `Initial your ${green('TypeScript')} library with ${green(
+            '@culur/culur',
+        )}`,
+    );
+
+    const abc = await prompts([
         {
             type: 'text',
-            name: '',
+            name: 'directory',
+            initial: 'src',
+            message: `Input directory:`,
         },
     ]);
 
-    // const data = await fse.readJson('./package.json', { throws: false });
-    // console.log(data);
+    console.log('current', process.cwd());
 
-    var unsorted = { c: 'crane', b: 'boy', a: 'ant' };
-    var sorted = lodash(unsorted).toPairs().sortBy(0).fromPairs().value();
+    const answers: { src: string; lib: string } = await prompts([
+        {
+            type: 'text',
+            name: 'src',
+            initial: 'src',
+            message: `Input directory:`,
+        },
+        {
+            type: 'text',
+            name: 'lib',
+            initial: 'lib',
+            message: `Output directory:`,
+        },
+    ]);
 
-    console.log(sorted);
+    console.log(answers);
 });
