@@ -13,10 +13,14 @@ setup.action(async () => {
 
     const abc = await prompts([
         {
-            type: 'text',
-            name: 'directory',
-            initial: 'src',
-            message: `Input directory:`,
+            type: 'select',
+            name: 'value',
+            message: 'Root directory:',
+            choices: [
+                { title: 'Current working directory', value: 'current' },
+                { title: 'Create a new directory', value: 'new' },
+            ],
+            initial: 1,
         },
     ]);
 
