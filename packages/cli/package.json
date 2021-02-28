@@ -1,5 +1,5 @@
 {
-  "name": "@culur/cli",
+  "name": "@culur/culur",
   "version": "0.0.0",
   "description": "Sharing Typescript configurations",
   "repository": {
@@ -16,9 +16,9 @@
     "config",
     "typescript"
   ],
-  "main": "build/main/index.js",
-  "types": "build/main/index.d.ts",
-  "module": "build/module/index.js",
+  "main": "lib/main/index.js",
+  "types": "lib/main/index.d.ts",
+  "module": "lib/module/index.js",
   "files": [
     "tsconfig.json",
     "CHANGELOG.md",
@@ -29,10 +29,10 @@
     "dev": "babel-node --extensions .ts -- src/index.ts",
     "build": "run-s build:*",
     "build:tsc": "tsc",
-    "build:babel": "babel src --extensions .ts --out-dir build --source-maps inline",
+    "build:babel": "babel src --extensions .ts --out-dir lib --source-maps inline",
     "clean": "run-s clean:*",
     "clean:build": "rimraf build",
-    "start": "node build/index.js"
+    "start": "node lib/index.js"
   },
   "engines": {
     "node": ">=12"
@@ -44,6 +44,8 @@
     "@babel/preset-typescript": "^7.12.16",
     "babel-plugin-module-resolver": "^4.1.0",
     "commander": "^7.1.0",
+    "fs-extra": "^9.1.0",
+    "lodash": "^4.17.21",
     "prompts": "^2.4.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.1.5"
@@ -51,6 +53,8 @@
   "devDependencies": {
     "@babel/node": "^7.12.16",
     "@babel/register": "^7.12.13",
+    "@types/fs-extra": "^9.0.7",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.28",
     "@types/prompts": "^2.0.9"
   }

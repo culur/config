@@ -1,15 +1,23 @@
 import { Command } from 'commander';
 import prompts from 'prompts';
+import fse from 'fs-extra';
+import lodash from 'lodash';
+
 export const setup = new Command('setup');
 
 setup.action(async () => {
-    console.log('do something here');
-    const response = await prompts({
-        type: 'number',
-        name: 'value',
-        message: 'How old are you?',
-        validate: value => (value < 18 ? `Nightclub is 18+ only` : true),
-    });
+    const response = await prompts([
+        {
+            type: 'text',
+            name: '',
+        },
+    ]);
 
-    console.log(response);
+    // const data = await fse.readJson('./package.json', { throws: false });
+    // console.log(data);
+
+    var unsorted = { c: 'crane', b: 'boy', a: 'ant' };
+    var sorted = lodash(unsorted).toPairs().sortBy(0).fromPairs().value();
+
+    console.log(sorted);
 });
